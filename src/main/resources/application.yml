@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: ''
+    username: sa
+    url: jdbc:h2:file:~/b2c;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: 'false'
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: none
+    show-sql: 'true'
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      path: /h2-console
+      enabled: 'true'
+server:
+  servlet:
+    context-path: /ecommerce
+  port: 9080
+
+logging:
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+com:
+  org:
+    log:
+      masking: 'false'
